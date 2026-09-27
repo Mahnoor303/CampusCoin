@@ -1,5 +1,9 @@
 # CampusCoin — Live Deployment (GitHub + alwaysdata)
 
+> **⚠️ AlwaysData pe "upstream failed" errors aa rahe hain?**
+> Free + reliable alternative ke liye **[HOSTING_MIGRATION.md](./HOSTING_MIGRATION.md)** dekhein —
+> MongoDB Atlas + Render (backend) + Vercel (frontend), sab free tier par.
+
 Poora app **ek hi alwaysdata site** par chalta hai: Express backend (port-based Node.js site) built React frontend bhi khud serve karta hai (`backend/backend/src/app.js` mein SPA fallback added hai). Is liye CORS ki zaroorat nahi aur sirf **campuscoin.alwaysdata.net** address kaafi hai.
 
 ```

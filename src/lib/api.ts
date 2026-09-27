@@ -85,7 +85,7 @@ export async function request<T>(path: string, init: RequestInit & { body?: stri
   try {
     response = await fetch(`${API_BASE}${path}`, { ...init, headers });
   } catch {
-    throw new Error("Cannot reach the CampusCoin server. Is the backend running on port 5000?");
+    throw new Error("Couldn't reach the server. Check your connection and try again.");
   }
 
   let payload: unknown = null;
