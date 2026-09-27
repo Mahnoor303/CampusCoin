@@ -20,8 +20,35 @@ const { sendSuccess } = require('./utils/apiResponse');
 
 const app = express();
 
-// Security HTTP headers
-app.use(helmet());
+// Security HTTP headers — CSP tuned for the app's real assets:
+// videos (CloudFront mp4 + Mux HLS via blob), images (Unsplash/Pexels), Google Fonts.
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      useDefaults: true,
+      directives: {
+        'default-src': ["'self'"],
+        'img-src': [
+          "'self'",
+          'data:',
+          'blob:',
+          'https://images.unsplash.com',
+          'https://images.pexels.com',
+        ],
+        'media-src': [
+          "'self'",
+          'blob:',
+          'https://d8j0ntlcm91z4.cloudfront.net',
+          'https://stream.mux.com',
+        ],
+        'connect-src': ["'self'", 'https://stream.mux.com'],
+        'script-src': ["'self'"],
+        'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+        'font-src': ["'self'", 'https://fonts.gstatic.com', 'data:'],
+      },
+    },
+  }),
+);
 
 // CORS configuration — env-configured origins + any localhost origin in non-production
 const corsOptions = {

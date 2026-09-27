@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
+import financeAnalyticsBg from '../assets/images/finance_analytics_abstract_1790439838268.jpg';
 import {
   ArrowDownUp,
   LayoutDashboard,
@@ -124,7 +125,7 @@ export default function FeaturesSection() {
         className="absolute inset-0 pointer-events-none z-0"
       >
         <img
-          src="/src/assets/images/finance_analytics_abstract_1790439838268.jpg"
+          src={financeAnalyticsBg}
           alt="Finance Analytics Abstract Texture"
           className="w-full h-[125%] object-cover opacity-30 md:opacity-35 filter contrast-115 saturate-105"
         />

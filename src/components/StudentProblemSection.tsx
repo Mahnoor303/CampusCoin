@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
+import financeStudentDeskBg from '../assets/images/finance_student_desk_1790439817862.jpg';
 import {
   HelpCircle,
   TrendingDown,
@@ -75,7 +76,7 @@ export default function StudentProblemSection() {
         className="absolute inset-0 pointer-events-none z-0"
       >
         <img
-          src="/src/assets/images/finance_student_desk_1790439817862.jpg"
+          src={financeStudentDeskBg}
           alt="Student Budget Planning Desk Background"
           className="w-full h-[125%] object-cover opacity-35 md:opacity-40 filter saturate-105 contrast-105"
         />
