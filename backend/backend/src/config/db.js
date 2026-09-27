@@ -8,8 +8,7 @@ const connectDB = async () => {
   const mongoURI = process.env.MONGO_URI;
 
   if (!mongoURI) {
-    console.error('CRITICAL: MONGO_URI environment variable is not defined.');
-    process.exit(1);
+    throw new Error('MONGO_URI environment variable is not defined.');
   }
 
   try {
@@ -21,7 +20,9 @@ const connectDB = async () => {
     return conn;
   } catch (error) {
     console.error(`[MongoDB] Connection error: ${error.message}`);
-    process.exit(1);
+    // Throw (don't process.exit) — server.js's startup retry loop and the
+    // Vercel serverless entry both rely on catching this failure to retry.
+    throw error;
   }
 };
 
