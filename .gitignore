@@ -1,0 +1,14 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+# Codebuff workspace metadata
+.freebuff/
+# Local MongoDB data/log (dev only — production uses alwaysdata MongoDB service)
+backend/.mongodb-data/
+backend/.mongodb-log/
+backend/.tmp/

@@ -1,0 +1,6 @@
+{
+  "name": "CampusCoin - Student Personal Finance",
+  "description": "A student-focused personal finance tracking web application built with the MERN stack. Track spending, manage monthly budgets, and build better money habits.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

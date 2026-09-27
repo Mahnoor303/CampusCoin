@@ -1,0 +1,160 @@
+/* Onboarding wizard styles — adapted from 3step.html, scoped under .onboarding-wizard */
+/* Theme matched to the dashboard accent (#e1694a) and neutral surfaces */
+
+@keyframes wiz-fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.onboarding-wizard {
+  --wiz-accent: #e1694a;
+  --wiz-accent-dark: #c95a3e;
+  --bg-app: #fefefe;
+  --wiz-text-primary: #171717;
+  --wiz-text-secondary: #525252;
+  --wiz-border: rgba(0, 0, 0, 0.06);
+  --ease-out: cubic-bezier(0.2, 0.7, 0.3, 1);
+
+  background: var(--bg-app);
+  font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  color: var(--wiz-text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.onboarding-wizard button,
+.onboarding-wizard input {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+}
+.onboarding-wizard button { cursor: pointer; }
+
+.onboarding-wizard input[type="number"]::-webkit-outer-spin-button,
+.onboarding-wizard input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.onboarding-wizard input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.onboarding-wizard .wiz-chip {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--wiz-border);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+  color: var(--wiz-text-secondary);
+  background-color: #ffffff;
+  cursor: pointer;
+  margin: 0.25rem;
+}
+.onboarding-wizard .wiz-chip:hover {
+  background-color: rgba(225, 105, 74, 0.08);
+  transform: translateY(-1px);
+}
+.onboarding-wizard .wiz-chip.active {
+  background: var(--wiz-accent);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(225, 105, 74, 0.25);
+}
+
+.onboarding-wizard .wiz-progress-step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--wiz-text-secondary);
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+.onboarding-wizard .wiz-progress-step.active {
+  opacity: 1;
+  color: var(--wiz-text-primary);
+  font-weight: 700;
+}
+.onboarding-wizard .wiz-progress-step.completed {
+  opacity: 0.9;
+  color: var(--wiz-text-primary);
+}
+
+.onboarding-wizard .wiz-progress-line {
+  width: 2rem;
+  height: 1px;
+  background-color: var(--wiz-border);
+  transition: all 0.3s ease;
+}
+.onboarding-wizard .wiz-progress-line.filled {
+  background: var(--wiz-accent);
+  height: 2px;
+}
+
+.onboarding-wizard .wiz-btn-primary {
+  background: var(--wiz-accent);
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 12px rgba(225, 105, 74, 0.25);
+}
+.onboarding-wizard .wiz-btn-primary:hover:not(:disabled) {
+  background: var(--wiz-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(225, 105, 74, 0.35);
+}
+.onboarding-wizard .wiz-btn-primary:active:not(:disabled) { transform: translateY(0); }
+.onboarding-wizard .wiz-btn-primary:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.onboarding-wizard .wiz-btn-secondary {
+  background-color: transparent;
+  color: var(--wiz-text-primary);
+  padding: 1rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 0.75rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.onboarding-wizard .wiz-btn-secondary:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-color: var(--wiz-border);
+}
+
+.onboarding-wizard .wiz-confirmation-icon {
+  background: var(--wiz-accent);
+  box-shadow: 0 8px 24px rgba(225, 105, 74, 0.35);
+}
+
+.onboarding-wizard .wiz-input-line { position: relative; }
+.onboarding-wizard .wiz-input-line::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--wiz-accent);
+  transition: width 0.3s ease;
+}
+.onboarding-wizard .wiz-input-line:focus-within::after { width: 100%; }

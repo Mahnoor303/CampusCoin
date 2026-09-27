@@ -1,0 +1,20 @@
+{
+  "name": "campuscoin",
+  "version": "1.0.0",
+  "description": "CampusCoin - Student Budget & Expense Tracker",
+  "private": true,
+  "scripts": {
+    "start": "npm --prefix backend start",
+    "dev": "npm --prefix backend run dev",
+    "test": "npm --prefix backend test",
+    "install:all": "npm --prefix backend install"
+  },
+  "keywords": [
+    "campuscoin",
+    "mern",
+    "student-budget",
+    "expense-tracker"
+  ],
+  "author": "",
+  "license": "ISC"
+}
