@@ -43,6 +43,8 @@ app.use(
           'https://*.mux.com',
         ],
         'connect-src': ["'self'", 'https://stream.mux.com', 'https://*.mux.com'],
+        // hls.js runs its demuxer inside a blob: Web Worker
+        'worker-src': ["'self'", 'blob:'],
         'script-src': ["'self'"],
         'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
         'font-src': ["'self'", 'https://fonts.gstatic.com', 'data:'],
